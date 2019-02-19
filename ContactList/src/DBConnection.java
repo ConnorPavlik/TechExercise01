@@ -40,13 +40,13 @@ public class DBConnection {
 
    static String getUserName() {
       String usr = UtilProp.getProp("user");
-      System.out.println("[DBG] URL: " + usr);
+      System.out.println("[DBG] User: " + usr);
       return usr;
    }
 
    static String getPassword() {
       String pwd = UtilProp.getProp("password");
-      System.out.println("[DBG] URL: " + pwd);
+      System.out.println("[DBG] PW: " + pwd);
       return pwd;
    }
 }

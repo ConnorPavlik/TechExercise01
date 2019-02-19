@@ -30,7 +30,7 @@ public class Search_Pavlik extends HttpServlet {
       PrintWriter out = response.getWriter();
       String title;
       boolean filter;
-      if(keyword!=null&&keyword!=""&&column!="All") {
+      if((keyword!=null&&keyword!="")&&column!="All") {
     	  title = "Contacts With "+column +" like: "+keyword+"%";
       	  filter = true;
       }
@@ -56,14 +56,12 @@ public class Search_Pavlik extends HttpServlet {
             String selectSQL = "SELECT * FROM contactList";
             preparedStatement = connection.prepareStatement(selectSQL);
          } else {
-            String selectSQL = "SELECT * FROM contactList WHERE ? LIKE ?";
+        	 String selectSQL = "SELECT * FROM contactList WHERE " + column + " LIKE ?";
             String theKeyword = keyword + "%";
             preparedStatement = connection.prepareStatement(selectSQL);
-            preparedStatement.setString(1, column.toUpperCase());
-            preparedStatement.setString(2, theKeyword);
+            preparedStatement.setString(1, theKeyword);
          }
          ResultSet rs = preparedStatement.executeQuery();
-
          while (rs.next()) {
             int id = rs.getInt("id");
             String FIRSTNAME = rs.getString("FIRSTNAME").trim();

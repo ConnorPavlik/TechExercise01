@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
 public class UtilProp {
    static final boolean _W = System.getProperty("os.name").toLowerCase().contains("windows");
    static String _PROP_FILENAME_WIN_LOCAL = "C:\\YOUR_PATH\\webproject\\WebContent\\config.properties";
-   static String _PROP_FILENAME_OSX_LOCAL = "/Users/pav/git/TechEx01/ContactList/WebContent/config.properties";
+   static String _PROP_FILENAME_OSX_LOCAL = "/Users/pav/git/TechExercise01/ContactList/WebContent/config.properties";
    // * Remote server path
    static String _PROP_FILENAME_REMOTE = "/var/lib/tomcat7/webapps/ContactList/config.properties";
    static Properties prop = new Properties();
